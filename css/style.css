@@ -1,0 +1,27 @@
+*{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: linear-gradient(45deg, rgb(141, 141, 227),rgb(137, 128, 235));
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.horizontal-line{
+    color: black;
+    width: 100%;
+    border-top: 1px solid black;
+
+}
+
+.header{
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
