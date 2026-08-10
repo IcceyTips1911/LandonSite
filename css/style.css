@@ -26,3 +26,17 @@ a{
     justify-content: center;
     text-align: center;
 }
+
+.resume{
+    display: grid;
+    padding: 2rem;
+    width: fit-content;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+}
+
+.resume .resume-border{
+    background-color: red;
+    padding: 2rem;
+    border-radius: 1rem;
+}
