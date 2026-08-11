@@ -1,6 +1,5 @@
-function toggleResume() {
-  const wrapper = document.getElementById('resume');
-  const btn = document.getElementById('toggle-btn');
+function toggleResume(button) {
+  const wrapper = button.previousElementSibling;
   
   if (wrapper.classList.contains('resume-card')) {
     wrapper.classList.remove('resume-card');

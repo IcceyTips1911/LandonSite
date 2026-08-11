@@ -12,10 +12,26 @@
     </div>
     <div class="horizontal-line"></div>
     <div class="resume-container">
-        <div id="resume" class="resume-card">
-            <iframe src="./LandonFiles/Landon_Resume.pdf" type="application/pdf"></iframe>
+        <div class="resume-holder">
+            <div id="resume" class="resume-card">
+                <iframe src="./LandonFiles/Landon_Resume.pdf" type="application/pdf"></iframe>
+            </div>
+            <button id="toggle-btn" onclick="toggleResume(this)">Enlarge Preview</button>
         </div>
-        <button id="toggle-btn" onclick="toggleResume()">Enlarge Preview</button>
+
+        <div class="resume-holder">
+            <div id="resume" class="resume-card">
+                <iframe src="./LandonFiles/Landon_Software_Resume.pdf" type="application/pdf"></iframe>
+            </div>
+            <button id="toggle-btn" onclick="toggleResume(this)">Enlarge Preview</button>
+        </div>
+        
+        <div class="resume-holder">
+            <div id="resume" class="resume-card">
+                <iframe src="./LandonFiles/Graduate Resume.docx (3).pdf" type="application/pdf"></iframe>
+            </div>
+            <button id="toggle-btn" onclick="toggleResume(this)">Enlarge Preview</button>
+        </div>
     </div>
     <script src="json/expand.js"></script>
 </body>
