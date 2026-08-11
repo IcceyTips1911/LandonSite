@@ -58,3 +58,14 @@ a{
     width: 850px;
     height: 600px;
 }
+
+#toggle-btn{
+    background-color: #24a0ed;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+}
+
+#toggle-btn:hover{
+    cursor: pointer;
+}
