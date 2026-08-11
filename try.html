@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume Preview</title>
+    <style>
+        /* Container sizing */
+.resume-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  font-family: sans-serif;
+}
+
+/* Smooth transition for resizing */
+#resume-wrapper {
+  transition: all 0.4s ease-in-out;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+#resume-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Small Preview Mode */
+.preview-mode {
+  width: 300px;
+  height: 400px;
+}
+
+/* Large Full Mode */
+.enlarged-mode {
+  width: 850px;
+  height: 1100px; /* Standard A4/Letter proportion */
+}
+
+/* Button styling */
+#toggle-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#toggle-btn:hover {
+  background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="resume-container">
+        <!-- Click to toggle size -->
+        <button id="toggle-btn" onclick="toggleResume()">Enlarge Preview</button>
+        <!-- PDF Wrapper -->
+        <div id="resume-wrapper" class="preview-mode">
+            <iframe src="/LandonFiles/Landon_Resume.pdf" type="application/pdf"></iframe>
+        </div>
+    </div>
+
+    <script>function toggleResume() {
+  const wrapper = document.getElementById('resume-wrapper');
+  const btn = document.getElementById('toggle-btn');
+  
+  if (wrapper.classList.contains('preview-mode')) {
+    wrapper.classList.remove('preview-mode');
+    wrapper.classList.add('enlarged-mode');
+    btn.textContent = "Shrink Preview";
+  } else {
+    wrapper.classList.remove('enlarged-mode');
+    wrapper.classList.add('preview-mode');
+    btn.textContent = "Enlarge Preview";
+  }
+}
+</script>
+</body>
+</html>
