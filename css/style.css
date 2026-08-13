@@ -28,8 +28,8 @@ a{
 }
 
 .resume-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
     padding: 1rem;
@@ -79,4 +79,21 @@ a{
     background-color: #1d7ab4;
     box-shadow:2px 2px 5px 4px rgba(0, 0 ,0 , 0.1);
     transform: translateY(-3px);
+}
+
+.bio-container{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.bio-container .picture, .bio{
+    text-align: center;
+}
+
+#profile_picture{
+    height:50vh; 
+    width:50vh;
 }
