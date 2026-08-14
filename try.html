@@ -3,85 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Resume Preview</title>
+    <title>Floating Bubble Background</title>
     <style>
-        /* Container sizing */
-.resume-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-  font-family: sans-serif;
-}
+        /* Reset page defaults and style the base background */
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #182848, #4b6cb7);
+            height: 100vh;
+            overflow: hidden;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-/* Smooth transition for resizing */
-#resume-wrapper {
-  transition: all 0.4s ease-in-out;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
-  border-radius: 8px;
-}
+        /* Foreground Content styling */
+        .content {
+            color: white;
+            text-align: center;
+            z-index: 1; /* Keeps content layered above the bubbles */
+        }
 
-#resume-wrapper iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+        /* Fixed background wrapper container */
+        .bubble-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none; /* Prevents bubbles from blocking user clicks */
+        }
 
-/* Small Preview Mode */
-.preview-mode {
-  width: 300px;
-  height: 400px;
-}
+        /* Base styling for every individual bubble */
+        .bubble {
+            position: absolute;
+            bottom: -150px; /* Start completely off-screen at the bottom */
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.05) 60%, rgba(255, 255, 255, 0.2) 70%);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3), 0 4px 15px rgba(0, 0, 0, 0.1);
+            animation: floatUp linear infinite;
+        }
 
-/* Large Full Mode */
-.enlarged-mode {
-  width: 850px;
-  height: 1100px; /* Standard A4/Letter proportion */
-}
+        /* Unique positions, sizes, speeds, and delays for natural distribution */
+        .bubble:nth-child(1) { left: 10%; width: 80px; height: 80px; animation-duration: 12s; animation-delay: 0s; }
+        .bubble:nth-child(2) { left: 25%; width: 40px; height: 40px; animation-duration: 8s; animation-delay: 2s; }
+        .bubble:nth-child(3) { left: 40%; width: 120px; height: 120px; animation-duration: 16s; animation-delay: 1s; }
+        .bubble:nth-child(4) { left: 55%; width: 60px; height: 60px; animation-duration: 10s; animation-delay: 4s; }
+        .bubble:nth-child(5) { left: 70%; width: 90px; height: 90px; animation-duration: 14s; animation-delay: 2.5s; }
+        .bubble:nth-child(6) { left: 85%; width: 50px; height: 50px; animation-duration: 9s; animation-delay: 5s; }
+        .bubble:nth-child(7) { left: 30%; width: 70px; height: 70px; animation-duration: 11s; animation-delay: 7s; }
+        .bubble:nth-child(8) { left: 65%; width: 110px; height: 110px; animation-duration: 15s; animation-delay: 0.5s; }
 
-/* Button styling */
-#toggle-btn {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-}
-#toggle-btn:hover {
-  background-color: #0056b3;
-}
-
+        /* The floating animation logic */
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1; /* Fade in quickly as they appear */
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                /* Translate higher than view height, sway slightly sideways, scale up, and fade */
+                transform: translateY(-110vh) translateX(50px) scale(1.2) rotate(360deg);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div class="resume-container">
-        <!-- Click to toggle size -->
-        <button id="toggle-btn" onclick="toggleResume()">Enlarge Preview</button>
-        <!-- PDF Wrapper -->
-        <div id="resume-wrapper" class="preview-mode">
-            <iframe src="/LandonFiles/Landon_Resume.pdf" type="application/pdf"></iframe>
-        </div>
+    <!-- Main Content Layer -->
+    <div class="content">
+        <h1>Floating Background</h1>
+        <p>Pure HTML & CSS Animation</p>
     </div>
 
-    <script>function toggleResume() {
-  const wrapper = document.getElementById('resume-wrapper');
-  const btn = document.getElementById('toggle-btn');
-  
-  if (wrapper.classList.contains('preview-mode')) {
-    wrapper.classList.remove('preview-mode');
-    wrapper.classList.add('enlarged-mode');
-    btn.textContent = "Shrink Preview";
-  } else {
-    wrapper.classList.remove('enlarged-mode');
-    wrapper.classList.add('preview-mode');
-    btn.textContent = "Enlarge Preview";
-  }
-}
-</script>
+    <!-- Background Bubble Layer -->
+    <div class="bubble-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
 </body>
 </html>
