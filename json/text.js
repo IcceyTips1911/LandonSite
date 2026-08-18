@@ -1,4 +1,4 @@
-const words = ["Landon Johnson"];
+const words = ["Website Development", "Linux Systems", "Python Coding", "System Integration", "Server Management", "Hardware Provisioning"];
 let i = 0;
 let timer;
 

@@ -56,11 +56,20 @@ a{
 }
 
 .bio-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 2rem;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    gap: 4rem;
     background-color: #d3d3d37a;
+}
+
+.bio-container .simple-bio{
+    text-align: left;
+    border: 2px solid black;
+    padding: 1rem;
 }
 
 #profile{
@@ -76,8 +85,8 @@ a{
 }
 
 #dynamic-text {
-  color: #0076ff;
-  font-weight: bold;
+color: rgb(48, 141, 141);
+font-weight: bold;
 }
 
 .cursor {
