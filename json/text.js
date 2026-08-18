@@ -1,0 +1,40 @@
+const words = ["Landon Johnson"];
+let i = 0;
+let timer;
+
+function typingEffect() {
+    let word = words[i].split("");
+    var loopTyping = function() {
+        if (word.length > 0) {
+            document.getElementById('dynamic-text').innerHTML += word.shift();
+        } else {
+            setTimeout(deletingEffect, 2000); // Wait 2 seconds before erasing
+            return false;
+        }
+        timer = setTimeout(loopTyping, 150); // Typing speed
+    };
+    loopTyping();
+}
+
+function deletingEffect() {
+    let word = words[i].split("");
+    var loopDeleting = function() {
+        if (word.length > 0) {
+            word.pop();
+            document.getElementById('dynamic-text').innerHTML = word.join("");
+        } else {
+            if (words.length > (i + 1)) {
+                i++;
+            } else {
+                i = 0;
+            }
+            setTimeout(typingEffect, 500); // Wait 0.5 seconds before typing next word
+            return false;
+        }
+        timer = setTimeout(loopDeleting, 100); // Deleting speed
+    };
+    loopDeleting();
+}
+
+// Start the animation loop when the page loads
+document.addEventListener("DOMContentLoaded", typingEffect);
