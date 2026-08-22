@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>Landon's Portfolio</title>
+</head>
+<body>
+    <div class="header">
+        <h1><a href="index.html">Landon's Portfolio</a></h1>
+
+        <div class="nav-container">
+            <a href="#">About</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+        </div>
+        <script src="/json/active.js"></script>
+    </div>
+    <div class="horizontal-line"></div>
+
+    <div class="bio-container">
+        <div class="bio">
+            <h1>Hello! I'm Landon Johnson</h1>
+            <p>
+                I'm a Computer Science major from Baton Rouge, Louisiana, 
+                with a strong passion for technology and software development. 
+                I'm currently a freelance web developer who enjoys building websites, 
+                working on my home server, and experimenting with 
+                projects that spark my curiosity.
+                <br>
+                <br>
+                I'm always learning, building, and exploring new technologies to expand 
+                my skills and turn ideas into reality.
+            </p>
+        </div>
+
+        <div class="picture">
+            <img src="./css/pictures/profile_picture.jpg" id="profile_picture">
+        </div>
+    </div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="resume-container">
+        <div class="resume-holder">
+            <div id="resume" class="resume-card">
+                <iframe src="./LandonFiles/Landon_Resume.pdf" type="application/pdf"></iframe>
+            </div>
+            <button id="toggle-btn" onclick="toggleResume(this)">Enlarge Preview</button>
+        </div>
+    </div>
+    <script src="json/expand.js"></script>
+
+    <!--div class="bubble-container">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div-->
+</body>
+</html>
