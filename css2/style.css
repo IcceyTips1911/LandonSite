@@ -179,6 +179,11 @@ font-weight: bold;
 
 .about-container{
     padding: 2rem;
+    background-color: #efe2cc6e;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px 4px 5px rgba(180, 174, 174, 0.364);
+    margin: 3rem;
 }
 
 /*Accordion*/
@@ -212,7 +217,7 @@ font-weight: bold;
 
 .accordion-container .panel{
     max-height: 0;
-    overflow:hidden;
+    overflow: hidden;
     padding: 0 1rem;
     outline: .05rem solid black;
     background-color: white;
@@ -221,3 +226,6 @@ font-weight: bold;
 .accordion-container .panel.open{
     padding: 1rem;
 }
+
+
+/*Contact Page*/
