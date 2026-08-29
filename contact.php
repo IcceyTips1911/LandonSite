@@ -20,5 +20,13 @@
         </div>
         <script src="/json/active.js"></script>
     </div>
+
+    <div class="form-container">
+        <form action="process.php" method="POST">
+            <label>Name</label>
+            <input name="" type="">
+            <button type="submit" name="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>
