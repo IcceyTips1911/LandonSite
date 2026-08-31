@@ -228,18 +228,7 @@ font-weight: bold;
 }
 
 /*Contact Page*/
-
-.form-container{
+.information-container{
     border: 2px solid black;
-    padding: 1rem;
-    width: 50vh;
-    height: 50vh;
     justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-form{
-    display: flex;
-    flex-direction: column;
 }
